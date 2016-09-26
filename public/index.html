@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="/vendors/angular.min.js"></script>
+    <script src="/scripts/client.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <h1><u>Heros</u></h1>
+    <div ng-init="getHeros()" ng-controller="viewHeroController">
+  <div id="heroDiv" ng-repeat="hero in heros">
+    <div>
+      {{hero.alias}}
+    </div>
+    <div>
+      {{hero.first_name}}
+    </div>
+    <div>
+      {{hero.last_name}}
+    </div>
+    <div>
+      {{hero.city}}
+    </div>
+    <div>
+      {{hero.power_name}}
+    </div>
+  </div>
+</div>
+
+<div ng-controller="addHeroController">
+  <form>
+    <label for="alias">Alias: </label>
+    <input ng-model="alias" type="text" name="name">
+    <label for="first_name">First name:</label>
+    <input ng-model="first_name" type="text" name="animal">
+    <label for="last_name">Last Name:</label>
+    <input ng-model="last_name" type="text" name="age" value="">
+    <label for="city">City:</label>
+    <input ng-model="city" type="text" name="image" value="">
+    <label for="power_name">Power Name:</label>
+    <input ng-model="power_name" type="text" name="image" value="">
+    <input ng-click="addHero(alias, first_name, last_name, city, power_name)" type="button" name="saveHero" value="Add Hero">
+  </form>
+
+  </body>
+</html>
