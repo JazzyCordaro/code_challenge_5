@@ -11,7 +11,7 @@ router.get('/test', function(req, res) {
     first_name: 'Jazzy',
     last_name: 'Cordaro',
     city: 'Gotham',
-    power_name: 'hella strong'
+    power_name: 'Hella Strong'
   });
 });
 
@@ -34,7 +34,7 @@ router.get('/', function(req, res){
       console.log(err);
       res.sendStatus(500);
     }else{
-      console.log('found heros!');
+      console.log('found heros');
       res.send(heroResults);
     }
   });
@@ -43,7 +43,7 @@ router.get('/', function(req, res){
 router.post('/', function(req, res){
   console.log('in heros post');
   var sentHero = req.body;
-  console.log('sendHero:', sentHero);
+  console.log('sentHero:', sentHero);
 
 var newHero = new HeroModel({
   alias: sentHero.alias,
@@ -51,7 +51,7 @@ var newHero = new HeroModel({
   last_name: sentHero.last_name,
   city: sentHero.city,
   power_name: sentHero.power_name
-    });
   });
+});
 
 module.exports = router;
