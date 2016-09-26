@@ -10,8 +10,8 @@ router.get('/test', function(req, res) {
     alias: 'Secret',
     first_name: 'Jazzy',
     last_name: 'Cordaro',
-    city: 'MG',
-    power_name: 'very strong'
+    city: 'Gotham',
+    power_name: 'hella strong'
   });
 });
 
@@ -37,5 +37,21 @@ router.get('/', function(req, res){
       console.log('found heros!');
       res.send(heroResults);
     }
-  })
-})
+  });
+});
+
+router.post('/', function(req, res){
+  console.log('in heros post');
+  var sentHero = req.body;
+  console.log('sendHero:', sentHero);
+
+var newHero = new HeroModel({
+  alias: sentHero.alias,
+  first_name: sentHero.first_name,
+  last_name: sentHero.last_name,
+  city: sentHero.city,
+  power_name: sentHero.power_name
+    });
+  });
+
+module.exports = router;

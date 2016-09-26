@@ -38,7 +38,7 @@ function($scope, $http) {
 
     $http({
       method: 'POST',
-      url: '/pets',
+      url: '/heros',
       data: heroToSend
     }).then(function success(responseObject) {
       console.log('got dis', responseObject);
